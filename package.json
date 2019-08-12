@@ -1,0 +1,82 @@
+{
+  "name": "@reintroducing/rsr",
+  "version": "0.0.2",
+  "description": "A webpack powered script runner for React projects.",
+  "repository": "https://github.com/reintroducing/rsr",
+  "main": "bin/cli.js",
+  "bin": {
+    "rsr": "bin/cli.js"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "scripts": {
+    "release": "npm-release -- public"
+  },
+  "keywords": [],
+  "author": "Matt Przybylski",
+  "license": "ISC",
+  "devDependencies": {
+    "@spothero/commitlint-config": "2.1.1",
+    "@spothero/npm-publisher": "2.3.1"
+  },
+  "dependencies": {
+    "@babel/core": "7.5.5",
+    "@babel/plugin-proposal-class-properties": "7.5.5",
+    "@babel/plugin-proposal-decorators": "7.4.4",
+    "@babel/plugin-proposal-do-expressions": "7.5.0",
+    "@babel/plugin-proposal-export-default-from": "7.5.2",
+    "@babel/plugin-proposal-export-namespace-from": "7.5.2",
+    "@babel/plugin-proposal-function-sent": "7.5.0",
+    "@babel/plugin-proposal-json-strings": "7.2.0",
+    "@babel/plugin-proposal-logical-assignment-operators": "7.2.0",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "7.4.4",
+    "@babel/plugin-proposal-numeric-separator": "7.2.0",
+    "@babel/plugin-proposal-object-rest-spread": "7.5.5",
+    "@babel/plugin-proposal-optional-chaining": "7.2.0",
+    "@babel/plugin-proposal-pipeline-operator": "7.5.0",
+    "@babel/plugin-proposal-throw-expressions": "7.2.0",
+    "@babel/plugin-syntax-dynamic-import": "7.2.0",
+    "@babel/plugin-syntax-import-meta": "7.2.0",
+    "@babel/plugin-transform-runtime": "7.5.5",
+    "@babel/preset-env": "7.5.5",
+    "@babel/preset-react": "7.0.0",
+    "@babel/runtime-corejs3": "7.5.5",
+    "@hot-loader/react-dom": "16.8.6",
+    "@spothero/eslint-config": "1.8.4",
+    "@spothero/stylelint-config": "1.2.1",
+    "arg": "4.1.1",
+    "babel-loader": "8.0.6",
+    "babel-plugin-transform-react-jsx-img-import": "0.1.4",
+    "chalk": "2.4.2",
+    "cross-spawn": "6.0.5",
+    "css-loader": "3.2.0",
+    "del": "5.0.0",
+    "eslint": "6.1.0",
+    "eslint-friendly-formatter": "4.0.1",
+    "eslint-loader": "2.2.1",
+    "eslint-plugin-css-modules": "2.11.0",
+    "file-loader": "4.2.0",
+    "html-webpack-plugin": "3.2.0",
+    "image-webpack-loader": "5.0.0",
+    "mini-css-extract-plugin": "0.8.0",
+    "node-sass": "4.12.0",
+    "optimize-css-assets-webpack-plugin": "5.0.3",
+    "postcss-flexbugs-fixes": "4.1.0",
+    "postcss-import": "12.0.1",
+    "postcss-loader": "3.0.0",
+    "postcss-preset-env": "6.7.0",
+    "react-hot-loader": "4.12.10",
+    "sass-loader": "7.2.0",
+    "sass-resources-loader": "2.0.1",
+    "stylelint": "10.1.0",
+    "stylelint-webpack-plugin": "0.10.5",
+    "terser-webpack-plugin": "1.4.1",
+    "webpack": "4.39.1",
+    "webpack-bundle-analyzer": "3.4.1",
+    "webpack-cli": "3.3.6",
+    "webpack-dev-server": "3.8.0"
+  }
+}

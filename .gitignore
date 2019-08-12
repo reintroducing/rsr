@@ -1,0 +1,11 @@
+*.log
+.DS_Store
+.idea
+.env
+.sass-cache
+.venv
+.vscode
+*.code-workspace
+node_modules
+_internal
+dist
