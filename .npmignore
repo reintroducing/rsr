@@ -1,7 +1,6 @@
 _internal
-./.eslintrc
-./.npmrc
-./.nvmrc
+.eslintrc
+.nvmrc
 commitlint.config.js
 /docs
 /website
