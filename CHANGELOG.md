@@ -1,3 +1,9 @@
+# 0.1.1 - 08/12/2019
+
+## Miscellaneous Updates
+* [[959f14b](https://github.com/reintroducing/rsr/commit/959f14b)] - `fix:` Logic for scaffolding gitignore and npmrc files correctly (Matt Przybylski)
+* [[77f90bf](https://github.com/reintroducing/rsr/commit/77f90bf)] - `fix:` Add Sass resources to scaffolding and fix eslintrc and nvmrc being missing from scaffolded files (Matt Przybylski)
+
 # 0.1.0 - 08/12/2019
 
 ## New Features
