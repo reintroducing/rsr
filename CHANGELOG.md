@@ -1,3 +1,11 @@
+# 0.1.0 - 08/12/2019
+
+## New Features
+* [[01ff939](https://github.com/reintroducing/rsr/commit/01ff939)] - Add scaffolding of project files (Matt Przybylski)
+
+## Miscellaneous Updates
+* [[aab0445](https://github.com/reintroducing/rsr/commit/aab0445)] - `docs:` Update readme with setup information (Matt Przybylski)
+
 # 0.0.1 - 08/11/2019
 
 ## Miscellaneous Updates
