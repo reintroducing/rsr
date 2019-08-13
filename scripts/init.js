@@ -48,19 +48,19 @@ inquirer
         }
 
         answers.configs.forEach(answer => {
-            const isGitIgnore = (answer === '.gitignore');
-            const src = isGitIgnore ? 'gitignore' : answer;
-            const dest = isGitIgnore ? '.gitignore' : answer;
+            const src = (answer === '.gitignore' || answer === '.npmrc')
+                ? answer.replace('.', '')
+                : answer;
 
             ncp(
                 path.resolve(__dirname, `../templates/dotfiles/${src}`),
-                `${process.cwd()}/${dest}`,
+                `${process.cwd()}/${answer}`,
                 error => {
                     if (error) {
-                        return console.log(chalk.red(`Could not scaffold ${dest}:`, error));
+                        return console.log(chalk.red(`Could not scaffold ${answer}:`, error));
                     }
 
-                    console.log(chalk.green(`Scaffolded ${dest} to your project's root.`));
+                    console.log(chalk.green(`Scaffolded ${answer} to your project's root.`));
                 }
             );
         });
