@@ -140,7 +140,7 @@ module.exports = function(mode = 'development') {
                         {
                             loader: 'sass-resources-loader',
                             options: {
-                                resources: 'src/common/_resources.scss',
+                                resources: 'src/common/resources.scss',
                             },
                         },
                     ],
