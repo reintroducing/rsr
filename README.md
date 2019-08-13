@@ -19,12 +19,9 @@ Follow the steps below to install and initialize rSR in a new project.
     ```bash
     npm install @reintroducing/rsr -D
     ```
-1. Add rSR's scripts to package.json.
-    ```json
-    "scripts": {
-      "start": "rsr -e start",
-      "build": "rsr -e build"
-    },
+1. Initialize rSR and follow the prompts to scaffold a new project.
+    ```bash
+    npx rsr
     ```
 1. Begin development.
     ```bash

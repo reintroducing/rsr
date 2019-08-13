@@ -51,10 +51,6 @@ module.exports = function(mode = 'development') {
         },
         plugins: [
             new StyleLintPlugin(),
-            // new StyleLintPlugin({
-            //     // configBasedir: process.cwd(),
-            //     configBasedir: path.resolve(__dirname, '../'),
-            // }),
             new HtmlWebpackPlugin({
                 filename: `${dist}/index.html`,
                 template: `${src}/index.html`,
