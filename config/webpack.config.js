@@ -93,7 +93,6 @@ module.exports = function(mode = 'development') {
                             loader: 'eslint-loader',
                             options: {
                                 formatter: eslintFriendlyFormatter,
-                                emitError: true,
                                 emitWarning: true,
                             },
                         },

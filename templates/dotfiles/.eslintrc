@@ -1,17 +1,5 @@
 {
     "extends": [
         "@spothero",
-    ],
-    "plugins": [
-        "css-modules",
-    ],
-    "rules": {
-        "css-modules/no-unused-class": 2,
-        "css-modules/no-undef-class": 2,
-    },
-    "settings": {
-        "css-modules": {
-            "basePath": "src",
-        },
-    },
+    ]
 }
