@@ -1,3 +1,11 @@
+# 0.2.0 - 08/15/2019
+
+## New Features
+* [[b5e4a7f](https://github.com/reintroducing/rsr/commit/b5e4a7f)] - Add Prettier support (Matt Przybylski)
+
+## Miscellaneous Updates
+* [[1d764a2](https://github.com/reintroducing/rsr/commit/1d764a2)] - `fix:` Remove css-modules ESLint plugin as it has too many issues (Matt Przybylski)
+
 # 0.1.1 - 08/12/2019
 
 ## Miscellaneous Updates
