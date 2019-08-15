@@ -26,6 +26,8 @@ inquirer
                 {name: '.gitignore', checked: true},
                 {name: '.npmrc', checked: false},
                 {name: '.nvmrc', checked: false},
+                {name: '.prettierignore', checked: true},
+                {name: '.prettierrc', checked: true},
                 {name: '.stylelintrc', checked: true},
             ],
         },
