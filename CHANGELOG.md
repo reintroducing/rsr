@@ -1,3 +1,9 @@
+# 0.3.0 - 08/17/2019
+
+## New Features
+* [[209b918](https://github.com/reintroducing/rsr/commit/209b918)] - Add manifest generation (Matt Przybylski)
+* [[ac1550e](https://github.com/reintroducing/rsr/commit/ac1550e)] - Add ability to override configuration ([#2](https://github.com/reintroducing/rsr/pull/2)) (Matt Przybylski)
+
 # 0.2.0 - 08/15/2019
 
 ## New Features
