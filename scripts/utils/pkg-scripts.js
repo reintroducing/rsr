@@ -10,10 +10,19 @@ module.exports = () => {
         }
 
         const jsonData = JSON.parse(data);
-        const startScript = 'rsr -e start';
-        const buildScript = 'rsr -e build';
+        const cleanScript = 'rm -rf dist || true';
+        const startScript = 'npm run clean && rsr -e start';
+        const buildScript = 'npm run clean && rsr -e build';
         let msg = 'You have existing scripts that rSR will overwrite.';
         let willOverride = false;
+
+        if (jsonData.scripts.clean && jsonData.scripts.clean !== cleanScript) {
+            msg += `\nCurrent "clean" script will be saved as "clean-backup".`;
+            jsonData.scripts['clean-backup'] = jsonData.scripts.clean;
+            willOverride = true;
+        }
+
+        jsonData.scripts.clean = cleanScript;
 
         if (jsonData.scripts.start && jsonData.scripts.start !== startScript) {
             msg += `\nCurrent "start" script will be saved as "start-backup".`;
@@ -40,7 +49,7 @@ module.exports = () => {
                 return console.log(chalk.red(writeError));
             }
 
-            console.log(chalk.green('Scripts added to package.json.'));
+            console.log(chalk.green('rSR scripts added to package.json.'));
         });
     });
 };

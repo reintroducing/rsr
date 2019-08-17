@@ -50,19 +50,26 @@ inquirer
         }
 
         answers.configs.forEach(answer => {
-            const src = (answer === '.gitignore' || answer === '.npmrc')
-                ? answer.replace('.', '')
-                : answer;
+            const src =
+                answer === '.gitignore' || answer === '.npmrc'
+                    ? answer.replace('.', '')
+                    : answer;
 
             ncp(
                 path.resolve(__dirname, `../templates/dotfiles/${src}`),
                 `${process.cwd()}/${answer}`,
                 error => {
                     if (error) {
-                        return console.log(chalk.red(`Could not scaffold ${answer}:`, error));
+                        return console.log(
+                            chalk.red(`Could not scaffold ${answer}:`, error)
+                        );
                     }
 
-                    console.log(chalk.green(`Scaffolded ${answer} to your project's root.`));
+                    console.log(
+                        chalk.green(
+                            `Scaffolded ${answer} to your project's root.`
+                        )
+                    );
                 }
             );
         });
@@ -73,10 +80,17 @@ inquirer
                 `${process.cwd()}/src`,
                 error => {
                     if (error) {
-                        return console.log(chalk.red('Could not scaffold project files:', error));
+                        return console.log(
+                            chalk.red(
+                                'Could not scaffold project files:',
+                                error
+                            )
+                        );
                     }
 
-                    console.log(chalk.green('Project files scaffolded successfully.'));
+                    console.log(
+                        chalk.green('Project files scaffolded successfully.')
+                    );
                 }
             );
         }

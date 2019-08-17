@@ -27,3 +27,41 @@ Follow the steps below to install and initialize rSR in a new project.
     ```bash
     npm start
     ```
+
+## Available Configuration
+You can override a handful of configuration options by creating a `rsr.config.js` file at the root of your project. Most options are direct pass throughs of their webpack counterparts as shown below. The module should export a function that returns an object. The following parameters are passed into the function:
+
+* `webpack`: The internal rSR webpack instance.
+* `mode`: The environment in which the config will be executed.
+* `defaultConfig`: The default configuration for the given mode.
+    * While you can use this to override every option in rSR, it is not recommended. This is mostly provided as an escape hatch or if you need to pull existing values from the config and should be used sparingly. **Destructuring this onto the return object and altering it can cause your builds to not function correctly.**
+
+```js
+module.exports = ({webpack, mode, defaultConfig}) => {
+    const isDev = mode === 'development'; // 'development', 'production'
+
+    return {
+        // config options
+    };
+};
+```
+
+You can use the mode passed to set options based on the environment. All options are optional, you can include as little or as many as you'd like.
+
+### devServerPort
+The port to run the dev server on.
+
+### devServerProxy
+Adds a [proxy middleware](https://webpack.js.org/configuration/dev-server/#devserverproxy) to the dev server.
+
+### optimization
+An [optimization](https://webpack.js.org/configuration/optimization/) object to apply. By default, the `minimizer` is already set for production builds (both OptimizeCssAssetsPlugin and TerserPlugin). If you wish to overwrite these you can pass a new one in. Other settings passed here will be applied as is.
+
+### plugins
+An array of additional [plugins](https://webpack.js.org/configuration/plugins/#plugins) to apply.
+
+### rules
+An array of additional [rules](https://webpack.js.org/configuration/module/#modulerules) to apply.
+
+### sourceMap
+The style of [source map](https://webpack.js.org/configuration/devtool/#devtool) to use. Set to false for any mode to disable.

@@ -1,3 +1,13 @@
 {
-    "extends": "@spothero"
+    "extends": [
+        "@spothero",
+        "plugin:prettier/recommended",
+        "prettier/babel",
+        "prettier/react"
+    ],
+    "rules": {
+        "prettier/prettier": "error",
+        "@spothero/spothero/ternary-parentheses": 0,
+        "no-console": 0
+    }
 }
