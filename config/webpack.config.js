@@ -1,6 +1,7 @@
 const path = require('path');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WebpackAssetsManifest = require('webpack-assets-manifest');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
@@ -49,6 +50,7 @@ module.exports = (mode = 'development') => {
                 filename: `${dist}/index.html`,
                 template: `${src}/index.html`,
             }),
+            new WebpackAssetsManifest(),
             new MiniCssExtractPlugin({
                 filename: `css/[name]${isDev ? '' : '-[hash]'}.css`,
                 chunkFilename: isDev
