@@ -4,7 +4,7 @@ import React from 'react';
 
 function App() {
     return (
-        <div className={css.container}>
+        <div className={css.root}>
             <p>rSR App created successfully!</p>
         </div>
     );
