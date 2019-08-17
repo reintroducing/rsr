@@ -1,18 +1,18 @@
 const path = require('path');
-const del = require('del');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+    .BundleAnalyzerPlugin;
 const eslintFriendlyFormatter = require('eslint-friendly-formatter');
 const postCssImport = require('postcss-import');
 const postcssPresetEnv = require('postcss-preset-env');
 const flexbugsFixes = require('postcss-flexbugs-fixes');
 
-module.exports = function(mode = 'development') {
-    const isDev = (mode === 'development' || mode === 'test');
+module.exports = (mode = 'development') => {
+    const isDev = mode === 'development' || mode === 'test';
     const dist = path.resolve(process.cwd(), 'dist');
     const src = path.resolve(process.cwd(), 'src');
     const entry = [`${src}/index.js`];
@@ -31,23 +31,17 @@ module.exports = function(mode = 'development') {
         entry.unshift('react-hot-loader/patch');
     }
 
-    del.sync(dist);
-
     return {
-        mode: (isDev)
-            ? 'development'
-            : 'production',
+        mode: isDev ? 'development' : 'production',
         target: 'web',
-        devtool: (isDev)
-            ? 'cheap-module-source-map'
-            : 'source-map',
+        devtool: isDev ? 'cheap-module-source-map' : 'source-map',
         entry,
         output: {
-            filename: `js/[name]${(isDev) ? '' : '-[hash]'}.js`,
+            filename: `js/[name]${isDev ? '' : '-[hash]'}.js`,
             path: `${dist}`,
-            ...(isDev) && {
+            ...(isDev && {
                 publicPath: '/',
-            },
+            }),
         },
         plugins: [
             new StyleLintPlugin(),
@@ -56,31 +50,24 @@ module.exports = function(mode = 'development') {
                 template: `${src}/index.html`,
             }),
             new MiniCssExtractPlugin({
-                filename: `css/[name]${(isDev) ? '' : '-[hash]'}.css`,
-                chunkFilename: (isDev)
+                filename: `css/[name]${isDev ? '' : '-[hash]'}.css`,
+                chunkFilename: isDev
                     ? 'css/[name]-[id].css'
                     : 'css/[name]-[contenthash].css',
             }),
             new BundleAnalyzerPlugin({
-                analyzerMode: (isDev) ? 'static' : 'disabled',
+                analyzerMode: isDev ? 'static' : 'disabled',
                 openAnalyzer: false,
             }),
         ],
         resolve: {
             alias: {
-                ...(isDev) && {
+                ...(isDev && {
                     'react-dom': '@hot-loader/react-dom',
-                },
+                }),
             },
-            modules: [
-                'node_modules',
-                src,
-            ],
-            extensions: [
-                '.js',
-                '.jsx',
-                '.json',
-            ],
+            modules: ['node_modules', src],
+            extensions: ['.js', '.jsx', '.json'],
         },
         module: {
             rules: [
@@ -115,7 +102,9 @@ module.exports = function(mode = 'development') {
                             options: {
                                 importLoaders: 2,
                                 modules: {
-                                    localIdentName: `[name]-[local]${(isDev) ? '' : '-[hash:base64]'}`,
+                                    localIdentName: `[name]-[local]${
+                                        isDev ? '' : '-[hash:base64]'
+                                    }`,
                                 },
                                 sourceMap: isDev,
                             },
@@ -150,7 +139,9 @@ module.exports = function(mode = 'development') {
                         {
                             loader: 'file-loader',
                             options: {
-                                name: `[folder]/[name]${(isDev) ? '' : '-[contenthash]'}.[ext]`,
+                                name: `[folder]/[name]${
+                                    isDev ? '' : '-[contenthash]'
+                                }.[ext]`,
                                 outputPath: 'img',
                             },
                         },
@@ -165,29 +156,33 @@ module.exports = function(mode = 'development') {
             ],
         },
         stats,
-        ...(isDev) && {
+        ...(isDev && {
             devServer: {
                 historyApiFallback: true,
                 hot: true,
                 open: true,
+                port: 3000,
                 publicPath: '/',
                 stats,
                 writeToDisk: true,
             },
-        },
+        }),
         performance: {
             hints: false,
         },
         optimization: {
-            ...(!isDev) && {
+            ...(!isDev && {
                 minimizer: [
                     new OptimizeCssAssetsPlugin({
                         cssProcessorPluginOptions: {
-                            preset: ['default', {
-                                discardComments: {
-                                    removeAll: true,
+                            preset: [
+                                'default',
+                                {
+                                    discardComments: {
+                                        removeAll: true,
+                                    },
                                 },
-                            }],
+                            ],
                         },
                     }),
                     new TerserPlugin({
@@ -203,7 +198,7 @@ module.exports = function(mode = 'development') {
                         },
                     }),
                 ],
-            },
+            }),
         },
     };
-}
+};
