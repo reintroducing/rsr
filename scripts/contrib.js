@@ -23,6 +23,7 @@ inquirer
 
                 const {stdout} = await install(pkgJson.dependencies, {
                     prefer: 'npm',
+                    stdio: ['pipe', process.stdout, process.stderr],
                 });
 
                 console.log('Finished installing npm dependencies.', stdout);
