@@ -48,6 +48,9 @@ module.exports = ({webpack, mode, defaultConfig}) => {
 
 You can use the mode passed to set options based on the environment. All options are optional, you can include as little or as many as you'd like.
 
+### analyzer
+[Options object](https://github.com/webpack-contrib/webpack-bundle-analyzer#options-for-plugin) to pass through to the bundle analyzer.
+
 ### devServerPort
 The port to run the dev server on.
 
