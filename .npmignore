@@ -1,6 +1,8 @@
 _internal
 ./.eslintrc
 ./.nvmrc
+./.prettierignore
+./.prettierrc
+CHANGELOG.md
 commitlint.config.js
-/docs
-/website
+CONTRIBUTING.md
