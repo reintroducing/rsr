@@ -1,3 +1,12 @@
+# 0.4.0 - 08/21/2019
+
+## New Features
+* [[5736d50](https://github.com/reintroducing/rsr/commit/5736d50)] - Add support for changing WebpackBundleAnalyzer settings directly (Matt Przybylski)
+
+## Miscellaneous Updates
+* [[cbf5816](https://github.com/reintroducing/rsr/commit/cbf5816)] - `docs:` Add contributing guide (Matt Przybylski)
+* [[2948320](https://github.com/reintroducing/rsr/commit/2948320)] - `fix:` Scaffolded index file importing App incorrectly (Matt Przybylski)
+
 # 0.3.0 - 08/17/2019
 
 ## New Features
