@@ -1,3 +1,8 @@
+# 0.5.0 - 08/23/2019
+
+## New Features
+* [[2a502f8](https://github.com/reintroducing/rsr/commit/2a502f8)] - Allow setting localIdentName in css-loader (Matt Przybylski)
+
 # 0.4.0 - 08/21/2019
 
 ## New Features
