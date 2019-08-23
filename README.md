@@ -51,8 +51,23 @@ You can use the mode passed to set options based on the environment. All options
 ### analyzer
 [Options object](https://github.com/webpack-contrib/webpack-bundle-analyzer#options-for-plugin) to pass through to the bundle analyzer.
 
+**default:**
+```js
+{
+    analyzerMode: isDev ? 'static' : 'disabled',
+    openAnalyzer: false,
+}
+```
+
+### cssModulesIdentName
+Allows changing the [localIdentName](https://github.com/webpack-contrib/css-loader#localidentname) that the selectors in CSS modules receive during output generation.
+
+**default:** `'[name]-[local]'`
+
 ### devServerPort
 The port to run the dev server on.
+
+**default:** `3000`
 
 ### devServerProxy
 Adds a [proxy middleware](https://webpack.js.org/configuration/dev-server/#devserverproxy) to the dev server.
@@ -68,3 +83,5 @@ An array of additional [rules](https://webpack.js.org/configuration/module/#modu
 
 ### sourceMap
 The style of [source map](https://webpack.js.org/configuration/devtool/#devtool) to use. Set to false for any mode to disable.
+
+**default:** `isDev ? 'cheap-module-source-map' : 'source-map'`

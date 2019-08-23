@@ -7,6 +7,7 @@ function getWebpackConfig({webpack, mode, userConfig}) {
     if (userConfig) {
         const {
             analyzer,
+            cssModulesIdentName,
             devServerPort,
             devServerProxy,
             optimization,
@@ -44,16 +45,20 @@ function getWebpackConfig({webpack, mode, userConfig}) {
         };
 
         if (analyzer) {
-            const analyzerIndex = config.plugins.findIndex(plugin => {
+            const analyzerIndex = plugins.findIndex(plugin => {
                 return plugin.constructor.name === 'BundleAnalyzerPlugin';
             });
 
             if (analyzerIndex !== -1) {
                 config.plugins[analyzerIndex].opts = {
-                    ...config.plugins[analyzerIndex].opts,
+                    ...plugins[analyzerIndex].opts,
                     ...analyzer,
                 };
             }
+        }
+
+        if (cssModulesIdentName) {
+            config.module.rules[1].use[1].options.modules.localIdentName = cssModulesIdentName;
         }
     }
 
