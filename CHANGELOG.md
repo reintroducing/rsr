@@ -1,3 +1,11 @@
+# 0.6.0 - 08/29/2019
+
+## New Features
+* [[6346766](https://github.com/reintroducing/rsr/commit/6346766)] - Add recommended stylelintrc configuration for prettier (Matt Przybylski)
+
+## Miscellaneous Updates
+* [[07e7f7f](https://github.com/reintroducing/rsr/commit/07e7f7f)] - `chore:` Update to latest dependencies (Matt Przybylski)
+
 # 0.5.0 - 08/23/2019
 
 ## New Features
