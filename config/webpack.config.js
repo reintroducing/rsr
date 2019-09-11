@@ -56,6 +56,7 @@ module.exports = (mode = 'development') => {
                 chunkFilename: isDev
                     ? 'css/[name]-[id].css'
                     : 'css/[name]-[contenthash].css',
+                ignoreOrder: true,
             }),
             new BundleAnalyzerPlugin({
                 analyzerMode: isDev ? 'static' : 'disabled',
