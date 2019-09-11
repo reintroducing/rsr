@@ -1,3 +1,8 @@
+# 0.6.1 - 09/10/2019
+
+## Miscellaneous Updates
+* [[9bb8817](https://github.com/reintroducing/rsr/commit/9bb8817)] - `fix:` Add ignoreOrder option to MiniCssExtractPlugin to avoid warnings for css modules (Matt Przybylski)
+
 # 0.6.0 - 08/29/2019
 
 ## New Features
