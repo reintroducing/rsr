@@ -1,3 +1,8 @@
+# 0.7.0 - 09/12/2019
+
+## New Features
+* [[e3829ce](https://github.com/reintroducing/rsr/commit/e3829ce)] - Add ability to set production publicPath through ASSET_PATH env var (Matt Przybylski)
+
 # 0.6.1 - 09/10/2019
 
 ## Miscellaneous Updates
