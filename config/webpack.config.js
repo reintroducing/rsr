@@ -14,9 +14,14 @@ const flexbugsFixes = require('postcss-flexbugs-fixes');
 
 module.exports = (mode = 'development') => {
     const isDev = mode === 'development' || mode === 'test';
+    const assetPath = process.env.ASSET_PATH;
     const dist = path.resolve(process.cwd(), 'dist');
     const src = path.resolve(process.cwd(), 'src');
     const entry = [`${src}/index.js`];
+    const output = {
+        filename: `js/[name]${isDev ? '' : '-[hash]'}.js`,
+        path: `${dist}`,
+    };
     const stats = {
         children: false,
         chunkModules: false,
@@ -30,6 +35,9 @@ module.exports = (mode = 'development') => {
 
     if (isDev) {
         entry.unshift('react-hot-loader/patch');
+        output.publicPath = '/';
+    } else if (assetPath) {
+        output.publicPath = assetPath;
     }
 
     return {
@@ -37,13 +45,7 @@ module.exports = (mode = 'development') => {
         target: 'web',
         devtool: isDev ? 'cheap-module-source-map' : 'source-map',
         entry,
-        output: {
-            filename: `js/[name]${isDev ? '' : '-[hash]'}.js`,
-            path: `${dist}`,
-            ...(isDev && {
-                publicPath: '/',
-            }),
-        },
+        output,
         plugins: [
             new StyleLintPlugin(),
             new HtmlWebpackPlugin({

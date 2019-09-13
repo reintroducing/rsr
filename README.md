@@ -85,3 +85,10 @@ An array of additional [rules](https://webpack.js.org/configuration/module/#modu
 The style of [source map](https://webpack.js.org/configuration/devtool/#devtool) to use. Set to false for any mode to disable.
 
 **default:** `isDev ? 'cheap-module-source-map' : 'source-map'`
+
+## Custom Production Asset Path
+In some cases () you may want to pass a specific path for your static assets to replace the pre-configured `publicPath`. You can do so by setting a special `ASSET_PATH` environment variable before running the build script in your build configuration.
+
+```bash
+ASSET_PATH=/ npm run build
+```
