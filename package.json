@@ -1,6 +1,6 @@
 {
   "name": "@reintroducing/rsr",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "A webpack powered script runner for React projects.",
   "repository": "https://github.com/reintroducing/rsr",
   "main": "bin/cli.js",
