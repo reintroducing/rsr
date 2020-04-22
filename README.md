@@ -72,6 +72,9 @@ The port to run the dev server on.
 ### devServerProxy
 Adds a [proxy middleware](https://webpack.js.org/configuration/dev-server/#devserverproxy) to the dev server.
 
+### devServerOverrides
+Any additional dev server options/overrides that should be passed through.
+
 ### optimization
 An [optimization](https://webpack.js.org/configuration/optimization/) object to apply. By default, the `minimizer` is already set for production builds (both OptimizeCssAssetsPlugin and TerserPlugin). If you wish to overwrite these you can pass a new one in. Other settings passed here will be applied as is.
 

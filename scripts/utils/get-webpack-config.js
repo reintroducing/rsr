@@ -10,6 +10,7 @@ function getWebpackConfig({webpack, mode, userConfig}) {
             cssModulesIdentName,
             devServerPort,
             devServerProxy,
+            devServerOverrides = {},
             optimization,
             plugins,
             rules,
@@ -28,6 +29,7 @@ function getWebpackConfig({webpack, mode, userConfig}) {
             ...(devServerProxy && {
                 proxy: devServerProxy,
             }),
+            ...devServerOverrides,
         };
         config = {
             ...config,
