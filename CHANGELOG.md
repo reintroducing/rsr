@@ -1,3 +1,8 @@
+# 0.8.0 - 04/22/2020
+
+## New Features
+* [[be2c87b](https://github.com/reintroducing/rsr/commit/be2c87b)] - Allow devServerOverrides option to pass more options through to devServer (Matt)
+
 # 0.7.0 - 09/12/2019
 
 ## New Features
