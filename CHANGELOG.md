@@ -1,3 +1,8 @@
+# 0.8.1 - 04/22/2020
+
+## Miscellaneous Updates
+* [[720e5c1](https://github.com/reintroducing/rsr/commit/720e5c1)] - `chore:` Bump dev dependencies (Matt)
+
 # 0.8.0 - 04/22/2020
 
 ## New Features
