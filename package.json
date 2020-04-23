@@ -19,9 +19,9 @@
   "author": "Matt Przybylski",
   "license": "ISC",
   "devDependencies": {
-    "@spothero/commitlint-config": "2.1.1",
-    "@spothero/npm-publisher": "2.3.1",
-    "react": "16.9.0"
+    "@spothero/commitlint-config": "2.1.2",
+    "@spothero/npm-publisher": "2.3.2",
+    "react": "16.13.1"
   },
   "dependencies": {
     "@babel/core": "7.5.5",
