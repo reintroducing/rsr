@@ -19,16 +19,11 @@ inquirer
             type: 'checkbox',
             name: 'configs',
             choices: [
-                {name: '.babelrc', checked: true},
-                {name: '.browserslistrc', checked: true},
-                {name: '.editorconfig', checked: false},
-                {name: '.eslintrc', checked: true},
+                {name: '.editorconfig', checked: true},
                 {name: '.gitignore', checked: true},
-                {name: '.npmrc', checked: false},
+                {name: '.npmrc', checked: true},
                 {name: '.nvmrc', checked: false},
                 {name: '.prettierignore', checked: true},
-                {name: '.prettierrc', checked: true},
-                {name: '.stylelintrc', checked: true},
             ],
         },
         {
@@ -44,12 +39,12 @@ inquirer
             default: true,
         },
     ])
-    .then(answers => {
+    .then((answers) => {
         if (answers.scripts) {
             updatePkg();
         }
 
-        answers.configs.forEach(answer => {
+        answers.configs.forEach((answer) => {
             const src =
                 answer === '.gitignore' || answer === '.npmrc'
                     ? answer.replace('.', '')
@@ -58,7 +53,7 @@ inquirer
             ncp(
                 path.resolve(__dirname, `../templates/dotfiles/${src}`),
                 `${process.cwd()}/${answer}`,
-                error => {
+                (error) => {
                     if (error) {
                         return console.log(
                             chalk.red(`Could not scaffold ${answer}:`, error)
@@ -78,7 +73,7 @@ inquirer
             ncp(
                 path.resolve(__dirname, '../templates/src'),
                 `${process.cwd()}/src`,
-                error => {
+                (error) => {
                     if (error) {
                         return console.log(
                             chalk.red(
