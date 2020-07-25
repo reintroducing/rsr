@@ -1,3 +1,17 @@
+# 1.0.0 - 07/25/2020
+## Miscellaneous Updates
+
+## Breaking Changes
+* [[961afa1](https://github.com/reintroducing/rsr/commit/961afa1)] - Remove recommended setup configs ([#6](https://github.com/reintroducing/rsr/pull/6)) (Matt Przybylski)
+	* `breaking:` Remove internal suggested configs in favor of externalizing them
+	* `chore:` Update internal prettier and eslint configs
+	* `chore:` Clean up files according to new lint rules
+* [[dfa53ca](https://github.com/reintroducing/rsr/commit/dfa53ca)] - Use dart-sass instead of node-sass ([#5](https://github.com/reintroducing/rsr/pull/5)) (Matt Przybylski)
+
+## Miscellaneous Updates
+* [[83ef113](https://github.com/reintroducing/rsr/commit/83ef113)] - Create LICENSE (Matt Przybylski)
+* [[fa15d69](https://github.com/reintroducing/rsr/commit/fa15d69)] - `chore:` Bump most dependencies to latest (Matt)
+
 # 0.8.1 - 04/22/2020
 
 ## Miscellaneous Updates
