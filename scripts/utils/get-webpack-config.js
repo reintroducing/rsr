@@ -1,6 +1,5 @@
 const webpackConfig = require('../../config/webpack.config');
 
-const USE_RESOURCES = true;
 const RESOURCES_PATH = 'src/common/resources.scss';
 const SASS_RESOURCES_LOADER = {
     loader: 'sass-resources-loader',
@@ -24,7 +23,7 @@ function getWebpackConfig({webpack, mode, userConfig}) {
             plugins,
             rules,
             sourceMap,
-            useResources = USE_RESOURCES,
+            useResources = true,
             resourcesPath = RESOURCES_PATH,
         } = userConfig({
             webpack,
