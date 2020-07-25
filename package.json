@@ -17,9 +17,20 @@
   },
   "author": "Matt Przybylski",
   "license": "MIT",
+  "eslintConfig": {
+    "extends": [
+      "@spothero",
+      "plugin:prettier/recommended",
+      "prettier/babel",
+      "prettier/react"
+    ]
+  },
+  "prettier": "@spothero/prettier-config",
   "devDependencies": {
     "@spothero/commitlint-config": "2.1.2",
-    "@spothero/npm-publisher": "2.3.2"
+    "@spothero/eslint-config": "1.9.1",
+    "@spothero/npm-publisher": "2.3.2",
+    "@spothero/prettier-config": "0.1.1"
   },
   "dependencies": {
     "@hot-loader/react-dom": "16.13.0",
