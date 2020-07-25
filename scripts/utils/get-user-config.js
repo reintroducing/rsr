@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const chalk = require('chalk');
 const {cosmiconfig} = require('cosmiconfig');
 
@@ -13,7 +14,7 @@ function getUserConfig() {
         .then(result => {
             if (!result) {
                 console.log(
-                    chalk.green(
+                    chalk.yellow(
                         'No rsr.config.js present, proceeding with default configuration.'
                     )
                 );

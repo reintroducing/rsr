@@ -23,14 +23,14 @@ Follow the steps below to install and initialize rSR in a new project.
     ```bash
     npx rsr
     ```
-1. Check the `Suggested Setup Configs` section below for additional setup steps not related to rSR.
+1. See the `Additional Setup Configs` section below for additional setup steps not related to rSR.
 1. Begin development.
     ```bash
     npm start
     ```
 
-## Suggested Setup Configs
-As of version `1.0.0` of rSR, different types of configurations has been offloaded from the tool internally and it is suggested to be maintained by each project manually. This allows for greater flexibility in the management of these configurations and it is a better practice for the tool to not dictate this.
+## Additional Setup Configs
+As of version `1.0.0` of rSR, different types of configurations have been offloaded from the tool internally and it is required to be maintained by each project manually. This allows for greater flexibility in the management of these configurations and it is a better practice for the tool to not dictate this.
 
 * [Browserslist](https://github.com/spothero/browserslist-config)
 * [Prettier](https://github.com/spothero/prettier-config)
@@ -38,6 +38,7 @@ As of version `1.0.0` of rSR, different types of configurations has been offload
 * [ESLint](https://github.com/spothero/eslint-config)
 * [Stylelint](https://github.com/spothero/stylelint-config)
 
+Your project will not function correctly until these are implemented, be it using the above configurations or similar ones that fulfill the requirements for each type of configuration.
 
 ## Available Configuration
 You can override a handful of configuration options by creating a `rsr.config.js` file at the root of your project. Most options are direct pass throughs of their webpack counterparts as shown below. The module should export a function that returns an object. The following parameters are passed into the function:
@@ -99,6 +100,16 @@ An array of additional [rules](https://webpack.js.org/configuration/module/#modu
 The style of [source map](https://webpack.js.org/configuration/devtool/#devtool) to use. Set to false for any mode to disable.
 
 **default:** `isDev ? 'cheap-module-source-map' : 'source-map'`
+
+### useResources
+Imports [Sass resources](https://github.com/shakacode/sass-resources-loader) into every Sass module to avoid manual imports in every file where shared variables/mixins/placeholders are used.
+
+**default:** `true`
+
+### resourcesPath
+The path or array of paths to the resources file(s) when `useResources` is `true`.
+
+**default:** `'src/common/resources.scss'`
 
 ## Custom Production Asset Path
 In some cases () you may want to pass a specific path for your static assets to replace the pre-configured `publicPath`. You can do so by setting a special `ASSET_PATH` environment variable before running the build script in your build configuration.
