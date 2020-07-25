@@ -7,6 +7,7 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
     .BundleAnalyzerPlugin;
+const autoprefixer = require('autoprefixer');
 const dartSass = require('sass');
 const eslintFriendlyFormatter = require('eslint-friendly-formatter');
 const postCssImport = require('postcss-import');
@@ -117,6 +118,7 @@ module.exports = (mode = 'development') => {
                             loader: 'postcss-loader',
                             options: {
                                 plugins: [
+                                    autoprefixer(),
                                     postCssImport(),
                                     flexbugsFixes(),
                                     postcssPresetEnv(),
