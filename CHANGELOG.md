@@ -1,3 +1,8 @@
+# 1.1.0 - 07/25/2020
+
+## New Features
+* [[f970324](https://github.com/reintroducing/rsr/commit/f970324)] - Add autoprefixer support (Matt)
+
 # 1.0.0 - 07/25/2020
 ## Miscellaneous Updates
 
