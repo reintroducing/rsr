@@ -189,7 +189,6 @@ module.exports = (mode = 'development') => {
                         },
                     }),
                     new TerserPlugin({
-                        parallel: true,
                         sourceMap: true,
                         terserOptions: {
                             compress: {

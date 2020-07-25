@@ -1,5 +1,5 @@
 const chalk = require('chalk');
-const cosmiconfig = require('cosmiconfig');
+const {cosmiconfig} = require('cosmiconfig');
 
 const explorer = cosmiconfig('rsr');
 
