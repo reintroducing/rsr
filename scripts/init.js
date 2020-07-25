@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const path = require('path');
 const chalk = require('chalk');
 const inquirer = require('inquirer');
@@ -39,12 +40,12 @@ inquirer
             default: true,
         },
     ])
-    .then((answers) => {
+    .then(answers => {
         if (answers.scripts) {
             updatePkg();
         }
 
-        answers.configs.forEach((answer) => {
+        answers.configs.forEach(answer => {
             const src =
                 answer === '.gitignore' || answer === '.npmrc'
                     ? answer.replace('.', '')
@@ -53,7 +54,7 @@ inquirer
             ncp(
                 path.resolve(__dirname, `../templates/dotfiles/${src}`),
                 `${process.cwd()}/${answer}`,
-                (error) => {
+                error => {
                     if (error) {
                         return console.log(
                             chalk.red(`Could not scaffold ${answer}:`, error)
@@ -73,7 +74,7 @@ inquirer
             ncp(
                 path.resolve(__dirname, '../templates/src'),
                 `${process.cwd()}/src`,
-                (error) => {
+                error => {
                     if (error) {
                         return console.log(
                             chalk.red(

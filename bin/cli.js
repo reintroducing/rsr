@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+/* eslint-disable no-console */
 const arg = require('arg');
 const chalk = require('chalk');
 const spawn = require('cross-spawn');
