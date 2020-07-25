@@ -1,3 +1,8 @@
+# 1.2.0 - 07/25/2020
+
+## New Features
+* [[06e4585](https://github.com/reintroducing/rsr/commit/06e4585)] - Add useResources and resourcesPath options for better control of sass-resources-loader ([#7](https://github.com/reintroducing/rsr/pull/7)) (Matt Przybylski)
+
 # 1.1.0 - 07/25/2020
 
 ## New Features
