@@ -7,6 +7,7 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
     .BundleAnalyzerPlugin;
+const dartSass = require('sass');
 const eslintFriendlyFormatter = require('eslint-friendly-formatter');
 const postCssImport = require('postcss-import');
 const postcssPresetEnv = require('postcss-preset-env');
@@ -126,6 +127,7 @@ module.exports = (mode = 'development') => {
                             loader: 'sass-loader',
                             options: {
                                 sourceMap: isDev,
+                                implementation: dartSass,
                             },
                         },
                         {
