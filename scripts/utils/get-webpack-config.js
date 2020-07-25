@@ -1,5 +1,14 @@
 const webpackConfig = require('../../config/webpack.config');
 
+const USE_RESOURCES = true;
+const RESOURCES_PATH = 'src/common/resources.scss';
+const SASS_RESOURCES_LOADER = {
+    loader: 'sass-resources-loader',
+    options: {
+        resources: RESOURCES_PATH,
+    },
+};
+
 function getWebpackConfig({webpack, mode, userConfig}) {
     const defaultConfig = webpackConfig(mode);
     let {devServer, ...config} = defaultConfig;
@@ -15,6 +24,8 @@ function getWebpackConfig({webpack, mode, userConfig}) {
             plugins,
             rules,
             sourceMap,
+            useResources = USE_RESOURCES,
+            resourcesPath = RESOURCES_PATH,
         } = userConfig({
             webpack,
             mode,
@@ -59,9 +70,20 @@ function getWebpackConfig({webpack, mode, userConfig}) {
             }
         }
 
+        if (useResources) {
+            config.module.rules[1].use.push({
+                loader: 'sass-resources-loader',
+                options: {
+                    resources: resourcesPath,
+                },
+            });
+        }
+
         if (cssModulesIdentName) {
             config.module.rules[1].use[1].options.modules.localIdentName = cssModulesIdentName;
         }
+    } else {
+        config.module.rules[1].use.push(SASS_RESOURCES_LOADER);
     }
 
     return {

@@ -132,12 +132,6 @@ module.exports = (mode = 'development') => {
                                 implementation: dartSass,
                             },
                         },
-                        {
-                            loader: 'sass-resources-loader',
-                            options: {
-                                resources: 'src/common/resources.scss',
-                            },
-                        },
                     ],
                 },
                 {
