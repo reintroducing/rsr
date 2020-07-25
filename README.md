@@ -23,10 +23,21 @@ Follow the steps below to install and initialize rSR in a new project.
     ```bash
     npx rsr
     ```
+1. Check the `Suggested Setup Configs` section below for additional setup steps not related to rSR.
 1. Begin development.
     ```bash
     npm start
     ```
+
+## Suggested Setup Configs
+As of version `1.0.0` of rSR, different types of configurations has been offloaded from the tool internally and it is suggested to be maintained by each project manually. This allows for greater flexibility in the management of these configurations and it is a better practice for the tool to not dictate this.
+
+* [Browserslist](https://github.com/spothero/browserslist-config)
+* [Prettier](https://github.com/spothero/prettier-config)
+* [Babel](https://github.com/spothero/babel-preset)
+* [ESLint](https://github.com/spothero/eslint-config)
+* [Stylelint](https://github.com/spothero/stylelint-config)
+
 
 ## Available Configuration
 You can override a handful of configuration options by creating a `rsr.config.js` file at the root of your project. Most options are direct pass throughs of their webpack counterparts as shown below. The module should export a function that returns an object. The following parameters are passed into the function:

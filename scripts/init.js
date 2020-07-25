@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 const path = require('path');
 const chalk = require('chalk');
 const inquirer = require('inquirer');
@@ -19,16 +20,11 @@ inquirer
             type: 'checkbox',
             name: 'configs',
             choices: [
-                {name: '.babelrc', checked: true},
-                {name: '.browserslistrc', checked: true},
-                {name: '.editorconfig', checked: false},
-                {name: '.eslintrc', checked: true},
+                {name: '.editorconfig', checked: true},
                 {name: '.gitignore', checked: true},
-                {name: '.npmrc', checked: false},
+                {name: '.npmrc', checked: true},
                 {name: '.nvmrc', checked: false},
                 {name: '.prettierignore', checked: true},
-                {name: '.prettierrc', checked: true},
-                {name: '.stylelintrc', checked: true},
             ],
         },
         {
