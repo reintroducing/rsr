@@ -112,7 +112,7 @@ The path or array of paths to the resources file(s) when `useResources` is `true
 **default:** `'src/common/resources.scss'`
 
 ## Custom Production Asset Path
-In some cases () you may want to pass a specific path for your static assets to replace the pre-configured `publicPath`. You can do so by setting a special `ASSET_PATH` environment variable before running the build script in your build configuration.
+In some cases you may want to pass a specific path for your static assets to replace the pre-configured `publicPath`. You can do so by setting a special `ASSET_PATH` environment variable before running the build script in your build configuration.
 
 ```bash
 ASSET_PATH=/ npm run build
